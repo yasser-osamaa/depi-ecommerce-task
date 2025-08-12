@@ -25,10 +25,10 @@ class CategorcieBigItem extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.black,
+              color: Colors.grey.withValues(alpha: .2),
               spreadRadius: .2,
-              blurRadius: 1,
-              blurStyle: BlurStyle.outer,
+              blurRadius: 2,
+              offset: Offset(0, 3),
             ),
           ],
         ),

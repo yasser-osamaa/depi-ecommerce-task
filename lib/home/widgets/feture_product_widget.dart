@@ -18,81 +18,98 @@ class FetureProductWidget extends StatelessWidget {
         );
       },
       child: Container(
-        padding: EdgeInsets.all(10),
         width: 180,
         decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
-              color: Colors.black,
-              spreadRadius: .2,
-              blurRadius: .5,
-              blurStyle: BlurStyle.outer,
+              color: Colors.grey.withValues(alpha: .2),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: Offset(0, 3), // moves shadow down a bit
             ),
           ],
-          color: Colors.white24,
-          borderRadius: BorderRadius.circular(5),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Align(
-              alignment: Alignment.centerRight,
-              child: Icon(
-                Icons.favorite,
-                color: Colors.red,
+              alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.favorite, color: Colors.red),
               ),
             ),
-            Image.asset(
-              "assets/peach.jpeg",
-              height: 150,
-            ),
-            Text(
-              "\$9.00",
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.green,
-                fontWeight: FontWeight.w400,
+            Center(
+              child: Image.asset(
+                "assets/peach.jpeg",
+                height: 120,
               ),
-            ),
-            Text(
-              "Fresh peach",
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "dazen",
-              style: TextStyle(
-                fontSize: 17,
-                color: Colors.black,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.add_business_sharp,
-                  color: Colors.green,
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                Text(
-                  "Add to cart",
-                  style: TextStyle(
-                    fontSize: 17,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
             ),
             SizedBox(
               height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "\$9.00",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Fresh peach",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "dozen",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Divider(),
+            InkWell(
+              onTap: () {},
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.add, color: Colors.green),
+                    SizedBox(width: 5),
+                    Text(
+                      "Add to cart",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
